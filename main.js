@@ -13,6 +13,7 @@ Chiamata:
 https://flynn.boolean.careers/exercises/api/array/music
 */
 
+
 // Chiamata API ajax
 $.ajax(
   {
@@ -23,6 +24,24 @@ $.ajax(
       var arrayCD = data.response;
       console.log(arrayCD)
       cdTamplate(arrayCD);
+
+
+      // =======================================================
+      // ======================= BONUS =========================
+      var selezionaGenere = $('.genere-musicale').val();
+      console.log(selezionaGenere)
+
+
+      var genereMusicaleCd = $('.container').find('.cd').attr('genere');
+      console.log(genereMusicaleCd)
+
+      $('button').click(function() {
+        if(selezionaGenere === genereMusicaleCd) {
+          alert('presente')
+        } else {
+          alert('assente')
+        }
+      });
 
     },
     error: function() {
@@ -36,16 +55,17 @@ $.ajax(
 function cdTamplate(cdsArray) {
     var source = $("#cd-template").html();
     var template = Handlebars.compile(source);
-    console.log(template)
+    // console.log(template)
 
     for (var i = 0; i < cdsArray.length; i++) {
 
       var context = cdsArray[i];
 
       var html = template(context);
-      console.log(html)
+      // console.log(html)
 
-      $('.cds-container').append(html)
+      $('.cds-container').append(html);
+
     } // end ciclo for
   } // End function cdTamplate
 
