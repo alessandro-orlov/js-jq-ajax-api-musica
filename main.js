@@ -34,9 +34,9 @@ $.ajax(
       // Cambio valore dell'opzione del tag select
       select.change(function() {
         // Seleziono opzione del select
-        var selectOption = $(this).val();
+        var selectOption = $(select).val();
 
-          // Cicclo tutti i CD con each
+          // Cicclo su ogni .cd con each
           $('.cd').each(function() {
             // Seleziono OGNI valore del attributo data-genere
             var genereMuscale = $(this).attr('data-genere');
@@ -56,9 +56,11 @@ $.ajax(
     error: function() {
       alert('errore: risorsa non trovata')
     }
-  }
-);
 
+  }); // End Ajax call
+
+// ==========================================
+// =============== FUNCTIONS ================
 
 // Funzione stampo tamplate con handlebars
 function cdTamplate(allCDs) {
@@ -71,7 +73,7 @@ function cdTamplate(allCDs) {
 
       $('.cds-container').append(html);
 
-    } // end ciclo for
+    } // End Ciclo for
   } // End function cdTamplate
 
 }); // End document ready
