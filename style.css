@@ -80,5 +80,6 @@ header img {
   padding: 4px 10px;
   border: none;
   background: #1ed760;
+  text-transform: capitalize;
 
 }
