@@ -22,25 +22,29 @@ $.ajax(
     success: function(data) {
 
       var arrayCD = data.response;
-      console.log(arrayCD)
+      // console.log(arrayCD)
       cdTamplate(arrayCD);
 
 
       // =======================================================
       // ======================= BONUS =========================
-      var selezionaGenere = $('.genere-musicale').val();
-      console.log(selezionaGenere)
 
 
-      var genereMusicaleCd = $('.container').find('.cd').attr('genere');
-      console.log(genereMusicaleCd)
 
-      $('button').click(function() {
-        if(selezionaGenere === genereMusicaleCd) {
-          alert('presente')
-        } else {
-          alert('assente')
-        }
+      $('.genere-musicale').change(function() {
+
+        var selectValue = $(this).val();
+
+          $('.cd').each(function() {
+          var genereMuscale = $(this).attr('data-genere')
+
+          if ((selectValue === 'default') || (genereMuscale ===  selectValue) ) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+
       });
 
     },

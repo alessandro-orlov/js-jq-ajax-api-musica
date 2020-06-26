@@ -28,7 +28,6 @@
                 <option value="Metal">metal</option>
                 <option value="Jazz">jazz</option>
               </select>
-              <button>Seleziona</button>
             </div>
           </div>
           <!-- End select select genre-->
@@ -47,12 +46,12 @@
 
         <!-- handlebars tamplate -->
         <script id="cd-template" type="text/x-handlebars-template">
-          <div class="cd" genere="{{genre}}">
+          <div class="cd" data-genere="{{genre}}">
               <img src="{{poster}}" alt="{{author}}">
               <h3>{{title}}</h3>
               <span class="author">{{author}}</span>
               <span class="year">{{year}}</span>
-          </div> -->
+          </div>
         </script>
 
         <!-- My script -->
